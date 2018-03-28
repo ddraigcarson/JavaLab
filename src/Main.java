@@ -1,9 +1,16 @@
+import java.util.Arrays;
+
+import db.JDBC;
+import evolution.Evolution;
+import evolution.Board;
+import traffic.Traffic;
+
 public class Main {
 
     public static void main(String[] args) {
 
         System.out.println("args: " + String.join(", ", args));
-
+        
         RunMode runMode = null;
 
         if (args != null && args.length > 0) {
@@ -36,6 +43,22 @@ public class Main {
                 MatrixMaths matrixMaths = new MatrixMaths();
                 matrixMaths.execute();
                 break;
+            case DB:
+            	JDBC jdbc = new JDBC();
+            	jdbc.makeConnection();
+            case CAR:
+            	Traffic traffic = new Traffic();
+            	traffic.execute();
+            	break;
+            case TIC_TAC:
+            	Evolution game = new Evolution();
+            	game.execute();
+            	break;
+            case PERF:
+            	Performance perf= new Performance();
+            	perf.execute();
+            	
+            	break;
             default:
                 // do nothing
                 break;
