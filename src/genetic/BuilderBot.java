@@ -5,10 +5,6 @@ import java.util.List;
 
 public class BuilderBot {
 
-	public BuilderBot() {
-		
-	}
-	
 	public List<BabyBot> createBabyBots(int batchSize) {
 		List<BabyBot> babyBots = new ArrayList<>();
 		for (int i=0 ; i<batchSize ; i++) {

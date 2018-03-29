@@ -8,10 +8,10 @@ public class TeacherBot {
 	
 	public void testBabyBots(List<BabyBot> babyBots) {
 		
-		for (int i=0 ; i<babyBots.size() ; i+=2) {
+		for (int i=0 ; i<babyBots.size() ; i++) {
 			Test test = new Test();
-			BabyBot player1 = babyBots.get(i);
-			BabyBot player2 = babyBots.get(i+1);
+			ComputerBot player1 = new ComputerBot();
+			BabyBot player2 = babyBots.get(i);
 			
 			test.setPlayer1(player1);
 			test.setPlayer2(player2);
@@ -23,8 +23,12 @@ public class TeacherBot {
 					Stats.getInstance().draws++;
 				}
 				
-				player1.onResult(gameResult);
-				player2.onResult(gameResult);	
+				if (player1.symbol == gameResult) {
+					player1.score++;
+				}
+				if (player2.symbol == gameResult) {
+					player2.score++;
+				}
 			}
 			
 		}

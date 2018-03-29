@@ -8,7 +8,7 @@ public class Test {
 	
 	private BabyBot player1;
 	private BabyBot player2;
-	
+
 	private BabyBot currentPlayer;
 	private BabyBot offTurnPlayer;
 
@@ -32,6 +32,7 @@ public class Test {
 			int playerChoice = currentPlayer.chooseStrategy(board);
 			if (board[playerChoice] == 0) {
 				board[playerChoice] = currentPlayer.symbol;
+//				System.out.println(Arrays.toString(board));
 			} else {
 				Stats.getInstance().disqualifications++;
 				return offTurnPlayer.symbol;
