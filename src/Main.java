@@ -2,6 +2,7 @@ import java.util.Arrays;
 
 import db.JDBC;
 import evolution.Evolution;
+import genetic.GeneticModel;
 import evolution.Board;
 import traffic.Traffic;
 
@@ -51,7 +52,8 @@ public class Main {
             	traffic.execute();
             	break;
             case TIC_TAC:
-            	Evolution game = new Evolution();
+//            	Evolution game = new Evolution();
+            	GeneticModel game = new GeneticModel(); 
             	game.execute();
             	break;
             case PERF:
